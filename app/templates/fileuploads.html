@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<h2>Uploads</h2> <hr>
+
+<ul>{%for test in tester%}
+    <li>{{ test }}</li>
+</ul>
+{%endfor%}
+
+{% endblock %}
