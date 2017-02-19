@@ -68,12 +68,15 @@ def filelistings():
         
     rootdir = os.getcwd()
     tester=[]
+    pictures=[]
     print rootdir
     for subdir, dirs, files in os.walk(rootdir + '/app/static/uploads'):
         for file in files:
-            tester.append(file)
-            #tester.append(os.path.join(file))
-    return render_template('fileuploads.html', tester=tester)
+            if file[-4:] == '.jpg':
+                pictures.append(file)
+            else:
+                tester.append(file)
+    return render_template('fileuploads.html', tester=tester, pictures=pictures)
 ###
 # The functions below should be applicable to all Flask apps.
 ###

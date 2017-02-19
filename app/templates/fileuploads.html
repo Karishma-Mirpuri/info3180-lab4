@@ -4,9 +4,15 @@
 
 <h2>Uploads</h2> <hr>
 
+<h3>Files</h3>
 <ul>{%for test in tester%}
     <li>{{ test }}</li>
 </ul>
+{%endfor%}
+
+<h3>JPG Pictures</h3>
+{%for pic in pictures%}
+<img src="{{url_for('static', filename='uploads/' + pic)}}"/>
 {%endfor%}
 
 {% endblock %}
